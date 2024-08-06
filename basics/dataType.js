@@ -1,3 +1,5 @@
+//datatypes
+
 let name="sanket"
 let age = 25;
 let logIn=true;
