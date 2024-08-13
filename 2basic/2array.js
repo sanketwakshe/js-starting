@@ -8,7 +8,7 @@ const boys =["mahesh","atharv","ayush"]
 // const array1 = heros.concat(boys)
 // console.log(array1);    //  => Easly add two array
 
-//spread()
+//spread()   => combine arry ===========================================
 // const array2 = [...heros,...boys]
 // console.log(array2);   //=> Easly add two array and many time use spead...,...
 
