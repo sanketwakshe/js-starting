@@ -1,12 +1,12 @@
 
-//const tinderUser1 = {}   //=> output {},non singleton object
+const tinderUser1 = {}   //=> output {},non singleton object
 
 //singletone 
-// const tinderUser = new Object()     //=>singletone object
+const tinderUser = new Object()     //=>singletone object
 
-// tinderUser.id = "123asd"
-// tinderUser.name="sanket"
-// tinderUser.isLoggedIn = false
+tinderUser.id = "123asd"
+tinderUser.name="sanket"
+tinderUser.isLoggedIn = false
 
 
 // console.log(tinderUser);
@@ -31,4 +31,14 @@ const obj2 = {3:"c",4:"d" }
 //const obj3 = Object.assign({},obj1,obj2)     //two object combine by using assign
 
 const obj3 ={...obj1,...obj2}
-console.log(obj3);           //=> npm object
+//console.log(obj3);           //=> npm object
+
+//=======================
+console.log(tinderUser);
+
+console.log(Object.keys(tinderUser))  //=>output =[ 'id', 'name', 'isLoggedIn' ]
+console.log(Object.values(tinderUser))  //=>values 
+console.log(Object.entries(tinderUser));  //=> all in seprate array
+
+//===========================
+console.log(tinderUser.hasOwnProperty('name'));     //=>true 
