@@ -27,6 +27,8 @@ function loginUser(userName){
 }
 console.log(loginUser("sanket"));
 
+//=========================================================================================================================================
+
 function loginUserMessage(username = "sam"){     //=>default value
     if(!username){
         console.log("PLease enter a username");
