@@ -6,7 +6,7 @@
 const mySym =  Symbol("key1")
 
 const jsUser ={
-    name:"sanket",                //key:"value"
+    name:"sanika",                //key:"value"
     age:25,
     [mySym ] : "mykey1",
     email:"sanket@gmail.com",
@@ -46,7 +46,7 @@ jsUser.email = "aditi@gmail.com"
 //*******************function add in object
 
 jsUser.greeting = function(){
-    console.log("hellow sanket");
+    console.log("hellow nikhil");
     }
     console.log(jsUser.greeting()); //print in the jsUser
 
