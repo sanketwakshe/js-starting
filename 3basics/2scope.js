@@ -10,5 +10,9 @@ if(true){
     const b = 30
     console.log("inner:",a);  //block scope
     }
-    console.log(a);
+    //console.log(a);
+
+    //nested scope
+
+    
     
