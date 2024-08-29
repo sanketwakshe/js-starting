@@ -51,16 +51,16 @@ passport.deserializeUser(User.deserializeUser());
 // Session configuration
 const session = require("express-session"); 
 
-const sessionOptions = {
-    secret: 'sanketwakshe',  // Replace with your secret key
-    resave: false,
-    saveUninitialized: true,
-    cookie: cookie:{
-        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-      },    // they are user log in 7 day 
-};
+// const sessionOptions = {
+//     secret: 'sanketwakshe',  // Replace with your secret key
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: cookie:{
+//         expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+//         maxAge: 7 * 24 * 60 * 60 * 1000,
+//         httpOnly: true,
+//       },    // they are user log in 7 day 
+// };
 
 
 
@@ -97,9 +97,134 @@ app.use("/",userRouter);
 //in user.js//=======basic setup
 
 const express = require("express");
+const { format } = require('path');
 const router = express.Router();
 
 
 router.get("/signup", (req, res) => {
     res.send("form");
   });
+  //************************then create a signup format
+
+
+//   <% layout("/layouts/boilerplate.ejs") %>
+
+// <div class="row mt-3">
+//   <h1 class="col-6 offset-3">Sign Up</h1>
+//   <div class="col-6 offset-3">
+//     <form action="/signup" method="POST" class="needs-validation" novalidate>
+//       <div class="mb-3">
+//         <label for="username" class="form-label">Username</label>
+//         <input
+//           name="username"
+//           type="text"
+//           id="username"
+//           class="form-control"
+//           required
+//         />
+//         <div class="valid-feedback">Looks good</div>
+//       </div>
+
+//       <div class="mb-3">
+//         <label for="email" class="form-label">Email</label>
+//         <input
+//           name="email"
+//           type="text"
+//           id="email"
+//           class="form-control"
+//           required
+//         />
+//       </div>
+//       <div class="mb-3">
+//         <label for="password" class="form-label">Password</label>
+//         <input
+//           name="password"
+//           type="password"
+//           id="password"
+//           class="form-control"
+//           required
+//         />
+//       </div>
+//       <button class="btn btn-success mb-3">Submit</button>
+//     </form>
+//   </div>
+// </div>
+
+//route=================================
+const express = require("express");
+//const router = express.Router();
+const User = require("../models/user.js");
+const passport = require("passport");
+
+//**********signup route */
+router.get("/signup", (req, res) => {
+    res.render("users/signup.ejs");
+  });
+  
+  router.post("/signup", async (req, res) => {
+    try {
+      let { username, email, password } = req.body;
+      const newUser = new User({ email, username });
+      const registerUser = await User.register(newUser, password);
+      console.log(registerUser);
+      res.redirect("/students");
+    } catch (e) {
+      req.flash("not found");
+    }
+  });
+
+  //login route
+  
+
+  router.get("/login", (req, res) => {
+    res.render("users/login.ejs");
+  });
+  
+  router.post(
+    "/login",
+    passport.authenticate("local", {
+      failureRedirect: "/login",
+      failureFlash: true,
+    }),
+    async (req, res) => {
+      req.flash("success", "Welcome Back to Wanderlust! ");
+      let redirectUrl = res.locals.redirectUrl || "/students"; //jar res.local varti gelatarch java nahitar listing varti ya
+      res.redirect(redirectUrl);
+    }
+  );
+  
+  module.exports = router;
+  
+//   <%layout("/layouts/boilerplate.ejs")%>
+
+// <div class="row mt-3">
+//     <h1 class="col-6 offset-3">Log In</h1>
+//     <div class="col-6 offset-3">
+//       <form action="/login" method="POST" class="needs-validation" novalidate>
+  
+//         <div class="mb-3">
+//           <label for="username" class="form-label">Username</label>
+//           <input
+//             name="username"
+//             type="text"
+//             id="username"
+//             class="form-control"
+//             required
+//           />
+//         </div>
+//         <div class="mb-3">
+//           <label for="password" class="form-label">Password</label>
+//           <input
+//             name="password"
+//             type="password"
+//             id="password"
+//             class="form-control"
+//             required
+//           />
+//         </div>
+//         <button class="btn btn-success mb-3">Submit</button>
+//       </form>
+//     </div>
+//   </div>
+  
+//and chake aslos app.js
