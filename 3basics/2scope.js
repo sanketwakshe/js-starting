@@ -1,6 +1,6 @@
-//scope  {a} outside then they are simple scope
+//scope  {a} outside  atmadhe then they are simple scope
 
-//global scope {} inside then they are global scope
+//global scope {} inside baher then they are global scope
 
 
 let a =300 //global scope
