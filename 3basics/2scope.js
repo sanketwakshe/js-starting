@@ -14,5 +14,10 @@ if(true){
 
     //nested scope
 
+//impleset scope
+const balance = 1000
+if (balance>500) console.log('test');
+
+
     
     
