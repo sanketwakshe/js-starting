@@ -17,8 +17,12 @@ let myarry = ['sanket','sanika','jignesh']
 
 //***do and***
 
-let score = 11
+let score = 5
 do {
     console.log(`score is ${score}`);
     score++
-    } while (score <=10);
+    } while (score <=20);
+
+    //output
+
+    //5 6 7 8 9 10 
