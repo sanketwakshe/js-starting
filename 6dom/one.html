@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1  id="title" class="heading">Dom Learning</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    
+</body>
+</html>
+
+
+
+//types
+<!-- 1)innerText => ji value ahe ti
+2) innerContent => hidden value
+3) innerHTML => purn html kasa lihalay te 
+
+const text = document.getElementById('heading')
+text.innerContent -->
+
+
+// queryselector
+// sagle h1 have astil tar kiva ekanda perticulor h1 hava asel tr apn querySelectorvaparto
+
+document.querySelectorAll('h1')
+
+
+document.querySelector('input[type="password"]')
+
+
+ li cha color change karnyachi process
+document.querySelector('ol')
+<ol>​…​</ol>​
+document.querySelector('li')
+<li>​…​</li>​
+ const li = document.querySelector('li')
+undefined
+li .style.backgroundColor = 'red'
+'red'
+
+//errors
+
+const temp = document.querySelectorAll('li');
+undefined
+temp.style.background-color = 'red'
+VM5478:1 Uncaught SyntaxError: Invalid left-hand side in assignmentUnderstand this error
+**temp[0].style.backgroundColor = 'red'
+'red'
+temp.style.backgroundColor = 'red'
+
+// they are not work persnaly color or css properties for querySelectorAll they gives [0] no
+
