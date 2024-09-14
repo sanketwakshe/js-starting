@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/250591/pexels-photo-250591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="pp"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="ss"></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="dd"></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="ff" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="gg"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+// document.getElementById('owl').onclick = function (){
+//     alert("owl")
+// }
+//attached  Event
+ //@TYPE
+ //TYPES
+ //DEFAULT PREVENTED**
+
+ //@target
+ //source Element
+ // currentTarget**
+
+ //@ clientX
+ //clientY
+ //screenX
+ //screenY
+ //altkey
+ //ctrlKey
+ //keyCode
+// document.getElementById('images').addEventListener('click',function(e){
+// console.log('clicked inside the ul');
+//  },false)                                         //eventPropogation//1eventPublic,false ** bootom se top   //2,capturingmode = true  // top se botoom
+
+//  document.getElementById('owl').addEventListener('click',function(e){
+//  console.log('clicked owl');
+//  e.stopPropagation() // only owl properties see not goose to upper and see image log
+//  },false);
+ document.querySelector("a").addEventListener('click',function(e){
+e.preventDefault();//*******used in event handling to stop the browser's default action associated with the event. // after click google not open the google iin browser
+e.stopPropagation();// extra honyapasun adavto
+// In JavaScript, the e.stopPropagation() method (where e is the event object) is used to stop an event from propagating or "bubbling up" the DOM hierarchy. 
+// console.log('goggle clicked');
+ },false);
+
+document.querySelector('#images').addEventListener('click',function(e){
+console.log(e.target.tagName);// all li tag come // tagName= after clicked tag name come
+if(e.target.tagName ==='IMG'){
+    console.log(e.target.id);
+    let removeIt = e.target.parentNode
+    removeIt.remove();
+}
+
+
+
+
+//removeIt.parentNode.removeChild(removeIt);
+
+
+},false)
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+// document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+    
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName);
+    //     if (e.target.tagName === 'IMG') {
+    //         console.log(e.target.id);
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }
+    
+        
+    // }) -->
+    
+    <!-- //removeIt.parentNode.removeChild(removeIt) -->
