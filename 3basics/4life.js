@@ -5,7 +5,7 @@
 // (()=>{
 //     console.log("DB connected");
     
-// })()   // they are the syntax (()={})()
+// })()   // they are the syntax (()={})();
 
 ( (name)=>{
     console.log(`DB connected ${name}`);
