@@ -59,6 +59,8 @@ const promiseFour = new Promise(function(resolve, reject){
     console.log(error);
 }).finally(() => console.log("The promise is either resolved or rejected"))//promise pura huva yas nahi
 
+
+
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -80,6 +82,8 @@ async function consumePromiseFive(){
 }
 
 consumePromiseFive()
+
+
 
 async function getAllUsers(){  // in output fetch ka kam jaldi hota hai
     try {
