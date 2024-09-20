@@ -20,3 +20,7 @@ ex {
 
 }
 }
+
+jason =>
+
+In JavaScript, JSON (JavaScript Object Notation) is a lightweight data format used for storing and transporting data, typically between a server and a web application. Although JSON is inspired by JavaScript object syntax, it is a text format that is language-independent and used across various platforms.

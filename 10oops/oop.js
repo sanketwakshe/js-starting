@@ -41,4 +41,6 @@ console.log(userTwo);
  //call constructor call
  // this arrgument inject hota hai
  // func mil jata hai
+ 
+//   new() => current konty gostiv kam kartoy tyach data ghyanyasathi
 

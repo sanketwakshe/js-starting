@@ -110,7 +110,7 @@ fetch('https://api.github.com/users/sanketwakshe')
 // yes this is also available, kuch reading aap b kro.
 
 
-// fetch() madhe asnare kam pahile exicute hota
+// fetch() **************************************madhe asnare kam pahile exicute hota
 
 
 // devide in two part 
