@@ -42,7 +42,7 @@ function loginUserMessage(username = "sam"){     //=>default value
 
 
 //*****************************************...rest */
-function calculateCartPrice(...num1){
+function calculateCartPrice(...num1){           //The ...num1 collects all the arguments (200, 300, 400) into an array: [200, 300, 400].
     return(num1)
 }
 //console.log(calculateCartPrice(200,300,400));    //=>multiple values added
